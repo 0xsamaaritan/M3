@@ -1,0 +1,419 @@
+
+/* =================================
+   M3 - GLOBAL STYLES
+================================= */
+
+:root {
+    --background: #0b1120;
+    --surface: #111c30;
+    --surface-light: #17243a;
+    --primary: #4f8cff;
+    --text: #f1f5f9;
+    --muted: #9baac0;
+    --border: #25344b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 8%;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    font-size: 14px;
+    color: var(--muted);
+    transition: 0.2s;
+}
+
+.navbar nav a:hover {
+    color: var(--primary);
+}
+
+.nav-button {
+    padding: 10px 18px;
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+    color: var(--text);
+    font-size: 14px;
+}
+
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+    min-height: 570px;
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.15;
+    margin: 22px 0;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero-content > p {
+    color: var(--muted);
+    max-width: 540px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-button:hover {
+    background: #3476ed;
+}
+
+.secondary-button {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+
+/* =================================
+   HERO VISUAL
+================================= */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.visual-card {
+    background: linear-gradient(
+        145deg,
+        var(--surface-light),
+        var(--surface)
+    );
+
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 330px;
+}
+
+.visual-icon {
+    background: #203c69;
+    color: #8cb7ff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 22px;
+}
+
+.visual-card h3 {
+    font-size: 17px;
+}
+
+.visual-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.visual-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 17px 0;
+}
+
+
+/* =================================
+   GENERAL SECTIONS
+================================= */
+
+.section {
+    padding: 85px 10%;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+
+/* =================================
+   INFORMATION CARDS
+================================= */
+
+.info-grid,
+.practice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card,
+.practice-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.info-card h3,
+.practice-card h3 {
+    margin: 14px 0 8px;
+    font-size: 18px;
+}
+
+.info-card p,
+.practice-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.card-number {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+
+/* =================================
+   SECURITY LAB
+================================= */
+
+.lab-section {
+    background: #0e1728;
+}
+
+.lab-card {
+    max-width: 750px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.lab-label,
+.result-label {
+    color: var(--primary);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.lab-card h3 {
+    margin: 20px 0 8px;
+}
+
+.sample-phrase {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.result-area {
+    margin-top: 25px;
+}
+
+.result-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 25px;
+}
+
+.mnemonic-result {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 12px 0;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+}
+
+.security-warning {
+    margin-top: 18px;
+    padding: 15px;
+    border-left: 3px solid #e5a43b;
+    background: #25251f;
+    color: #e8c58b;
+    font-size: 13px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.footer {
+    text-align: center;
+    padding: 45px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.footer-note {
+    margin-top: 15px !important;
+}
+
+.copyright {
+    margin-top: 25px !important;
+}
+
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .navbar nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+        gap: 45px;
+    }
+
+    .info-grid,
+    .practice-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .hero {
+        padding: 65px 7%;
+    }
+
+    .section {
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .info-grid,
+    .practice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .lab-card {
+        padding: 23px;
+    }
+
+}
