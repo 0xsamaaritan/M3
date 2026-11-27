@@ -127,22 +127,21 @@ const patternLessons = {
             "to a predictable transformation."
     },
 
-    
-reuse: {
-    title: "Password reuse creates shared risk",
 
-    explanation:
-        "If the same password is used on multiple " +
-        "services, a breach at one service may put " +
-        "other accounts at risk when attackers try " +
-        "the exposed credentials elsewhere.",
+    reuse: {
+        title: "Password reuse creates shared risk",
 
-    recommendation:
-        "Use a different password for every account. " +
-        "A password manager can help you maintain " +
-        "unique credentials."
-}
+        explanation:
+            "If the same password is used on multiple " +
+            "services, a breach at one service may put " +
+            "other accounts at risk when attackers try " +
+            "the exposed credentials elsewhere.",
 
+        recommendation:
+            "Use a different password for every account. " +
+            "A password manager can help you maintain " +
+            "unique credentials."
+    }
 
 };
 
