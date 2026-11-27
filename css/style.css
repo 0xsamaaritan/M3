@@ -552,3 +552,49 @@ button {
         align-items: flex-start;
     }
 }
+
+
+/* =================================
+   M3 PREDICTABILITY AWARENESS
+================================= */
+
+.predictability-section {
+    background: #0e1728;
+}
+
+.predictability-card {
+    max-width: 780px;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.pattern-result {
+    margin-top: 28px;
+}
+
+.pattern-result h3 {
+    margin: 15px 0 10px;
+    font-size: 22px;
+}
+
+.pattern-explanation {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pattern-result .security-insight {
+    margin-top: 22px;
+}
+
+@media (max-width: 550px) {
+    .predictability-card {
+        padding: 23px;
+    }
+
+    .pattern-result h3 {
+        font-size: 19px;
+    }
+}
