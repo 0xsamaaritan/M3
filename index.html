@@ -23,6 +23,7 @@
             <a href="#home">Home</a>
             <a href="#learn">Learn</a>
             <a href="#lab">Security Lab</a>
+            <a href="#predictability">Predictability</a>
             <a href="#practices">Best Practices</a>
         </nav>
 
@@ -137,53 +138,180 @@
         </section>
 
 
-        <!-- Security Lab -->
+        <!-- M3 Mnemonic Learning Engine -->
         <section class="section lab-section" id="lab">
 
             <div class="section-heading">
-                <span class="eyebrow">INTERACTIVE LEARNING</span>
+                <span class="eyebrow">M3 LEARNING ENGINE</span>
 
-                <h2>Explore the mnemonic concept</h2>
+                <h2>Memory meets security</h2>
 
                 <p>
-                    See how a fictional sentence can be
-                    transformed into a memorable initial-letter
-                    pattern.
+                    Explore how a familiar sentence can become a
+                    mnemonic pattern — and why memorability alone
+                    does not guarantee password security.
                 </p>
             </div>
 
-            <div class="lab-card">
+            <div class="learning-card">
 
-                <span class="lab-label">FICTIONAL EDUCATIONAL EXAMPLE</span>
+                <div class="learning-header">
+                    <span class="learning-step">INTERACTIVE LESSON 01</span>
+                    <span class="learning-badge">Educational demo</span>
+                </div>
 
-                <h3>Original phrase</h3>
+                <h3>Choose a fictional phrase</h3>
 
-                <p class="sample-phrase">
-                    Every New Beginning Creates Another Opportunity
+                <p class="learning-description">
+                    Select one of the examples below to explore
+                    the first-letter mnemonic technique.
                 </p>
 
+                <label for="phraseSelector" class="input-label">
+                    Sample phrase
+                </label>
+
+                <select id="phraseSelector" class="phrase-selector">
+                    <option value="Every New Beginning Creates Another Opportunity">
+                        Every New Beginning Creates Another Opportunity
+                    </option>
+
+                    <option value="Knowledge Opens Doors To New Possibilities">
+                        Knowledge Opens Doors To New Possibilities
+                    </option>
+
+                    <option value="Small Steps Build Lasting Progress">
+                        Small Steps Build Lasting Progress
+                    </option>
+                </select>
+
                 <button id="transformButton" class="primary-button">
-                    Reveal the mnemonic
+                    Explore the mnemonic
                 </button>
 
-                <div id="resultArea" class="result-area" hidden>
+                <div id="learningResult" class="learning-result" hidden>
 
                     <div class="result-divider"></div>
 
                     <span class="result-label">
-                        FIRST-LETTER PATTERN
+                        YOUR MNEMONIC PATTERN
                     </span>
 
                     <p id="mnemonicResult" class="mnemonic-result"></p>
 
-                    <p class="security-warning">
-                        Educational example only. Initial-letter
-                        patterns from familiar or public phrases
-                        can be predictable. This is not a
-                        recommended password.
-                    </p>
+                    <div class="lesson-explanation">
+                        <h4>What just happened?</h4>
+
+                        <p>
+                            The first letter of each word was extracted
+                            and combined into a shorter pattern.
+                            This can help explain how memory cues work.
+                        </p>
+                    </div>
+
+                    <div class="security-insight">
+                        <span class="insight-title">
+                            SECURITY INSIGHT
+                        </span>
+
+                        <p>
+                            Familiar quotations, song lyrics and
+                            predictable transformations may be
+                            guessable. Adding a few predictable
+                            numbers or symbols does not necessarily
+                            make a pattern secure.
+                        </p>
+                    </div>
 
                 </div>
+
+                <p class="privacy-note">
+                    This demonstration uses predefined examples.
+                    Never enter or reuse your real account passwords
+                    or private phrases in educational tools.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- M3 Password Predictability Awareness -->
+        <section class="section predictability-section"
+                 id="predictability">
+
+            <div class="section-heading">
+                <span class="eyebrow">M3 SECURITY AWARENESS</span>
+
+                <h2>Memorable doesn't always mean unpredictable</h2>
+
+                <p>
+                    Explore common password patterns and learn
+                    why small, predictable changes may not
+                    provide meaningful protection.
+                </p>
+            </div>
+
+            <div class="predictability-card">
+
+                <label for="patternSelector" class="input-label">
+                    Choose a pattern to learn about
+                </label>
+
+                <select id="patternSelector"
+                        class="phrase-selector">
+
+                    <option value="familiar">
+                        Familiar phrase or quotation
+                    </option>
+
+                    <option value="suffix">
+                        Predictable number or symbol addition
+                    </option>
+
+                    <option value="substitution">
+                        Common character substitution
+                    </option>
+
+                    <option value="reuse">
+                        Reusing a password across accounts
+                    </option>
+
+                </select>
+
+                <button id="analyzePatternButton"
+                        class="primary-button">
+                    Explore the security lesson
+                </button>
+
+                <div id="patternResult" class="pattern-result" hidden>
+
+                    <div class="result-divider"></div>
+
+                    <span class="result-label">
+                        SECURITY LESSON
+                    </span>
+
+                    <h3 id="patternTitle"></h3>
+
+                    <p id="patternExplanation"
+                       class="pattern-explanation"></p>
+
+                    <div class="security-insight">
+                        <span class="insight-title">
+                            SAFER PRACTICE
+                        </span>
+
+                        <p id="patternRecommendation"></p>
+                    </div>
+
+                </div>
+
+                <p class="privacy-note">
+                    M3 uses predefined educational scenarios.
+                    Do not enter real passwords or account
+                    credentials into this demonstration.
+                </p>
 
             </div>
 

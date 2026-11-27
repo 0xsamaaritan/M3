@@ -417,3 +417,184 @@ button {
     }
 
 }
+
+
+/* =================================
+   M3 MNEMONIC LEARNING ENGINE
+================================= */
+
+.learning-card {
+    max-width: 780px;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.learning-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.learning-step,
+.learning-badge {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.learning-step {
+    color: var(--primary);
+}
+
+.learning-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: var(--surface-light);
+    color: var(--muted);
+    letter-spacing: 0;
+}
+
+.learning-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.learning-description {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.input-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.phrase-selector {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font: inherit;
+}
+
+.phrase-selector:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.learning-result {
+    margin-top: 28px;
+}
+
+.lesson-explanation {
+    margin-top: 20px;
+}
+
+.lesson-explanation h4 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.lesson-explanation p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.security-insight {
+    margin-top: 22px;
+    padding: 18px;
+    border-left: 3px solid #e5a43b;
+    border-radius: 5px;
+    background: #25251f;
+}
+
+.insight-title {
+    color: #e8c58b;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.security-insight p {
+    color: #e8c58b;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.privacy-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+@media (max-width: 550px) {
+    .learning-card {
+        padding: 23px;
+    }
+
+    .learning-card h3 {
+        font-size: 21px;
+    }
+
+    .learning-header {
+        align-items: flex-start;
+    }
+}
+
+
+/* =================================
+   M3 PREDICTABILITY AWARENESS
+================================= */
+
+.predictability-section {
+    background: #0e1728;
+}
+
+.predictability-card {
+    max-width: 780px;
+    padding: 35px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.pattern-result {
+    margin-top: 28px;
+}
+
+.pattern-result h3 {
+    margin: 15px 0 10px;
+    font-size: 22px;
+}
+
+.pattern-explanation {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.pattern-result .security-insight {
+    margin-top: 22px;
+}
+
+@media (max-width: 550px) {
+    .predictability-card {
+        padding: 23px;
+    }
+
+    .pattern-result h3 {
+        font-size: 19px;
+    }
+}
