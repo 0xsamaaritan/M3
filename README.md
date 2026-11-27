@@ -13,6 +13,7 @@ Explore how meaningful memories and mnemonic techniques can help users understan
 - **Mnemonic Learning Engine** — see how a fictional sentence becomes a first-letter mnemonic, and why memorability alone is not security.
 - **Password Predictability Awareness Engine** — learn why familiar phrases, predictable additions, common substitutions and password reuse are risky.
 - **Security Learning Dashboard** — seven short topics (memorability, length, uniqueness, password managers, MFA, passkeys and common myths), each with a key idea, a myth vs. fact and one practical action.
+- **Spot the Risk** — five fictional scenarios to practice recognizing password and sign-in risks, with instant feedback.
 - **Best Practices** — unique passwords, password managers, multi-factor authentication and passkeys.
 
 ## Core Principles
@@ -49,4 +50,4 @@ Then open `http://localhost:8000/` in a browser.
 
 ## Status
 
-Early development — Phase 4.3 (Security Learning Dashboard).
+Early development — Phase 4.4 (Interactive Learning Module: Spot the Risk).

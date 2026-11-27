@@ -212,3 +212,272 @@ topicCards.forEach((card, index) => {
     });
 
 });
+
+
+/*
+ * M3 - Interactive Learning Module: Spot the Risk
+ * Version: 0.5
+ *
+ * Fictional scenarios only. The score measures the learner's
+ * understanding, never the strength of any password.
+ * Answers are kept in memory only and are never saved.
+ */
+
+// Predefined fictional scenarios.
+// "answer" is the index of the correct option (0, 1 or 2).
+const quizScenarios = [
+
+    {
+        title: "Alex's new password",
+        scenario:
+            "Alex, a fictional user, creates a password from a " +
+            "pet's name, a birth year and an exclamation mark, " +
+            "such as \"Buddy1998!\".",
+        question: "What is the main weakness of this password?",
+        options: [
+            "It does not contain enough uppercase letters.",
+            "It follows a predictable pattern built from personal details.",
+            "It is too difficult to remember."
+        ],
+        answer: 1,
+        explanation:
+            "Pet names and birth years are often shared online, and " +
+            "the name + year + symbol pattern is one of the first " +
+            "that guessing tools try. Adding uppercase letters would " +
+            "not fix the predictable structure."
+    },
+
+    {
+        title: "Priya and the data breach",
+        scenario:
+            "A shopping website Priya uses announces a data breach. " +
+            "Priya used the same password for that website and for " +
+            "her email account.",
+        question: "What should Priya do first?",
+        options: [
+            "Change her email password to a new, unique one and turn on MFA.",
+            "Only change the password on the shopping website.",
+            "Wait to see if anything unusual happens."
+        ],
+        answer: 0,
+        explanation:
+            "Attackers try leaked passwords on other websites, and " +
+            "email is the most valuable target because it can reset " +
+            "other accounts. Priya should secure her email first, then " +
+            "change every other account where the password was reused."
+    },
+
+    {
+        title: "Sam's unexpected code",
+        scenario:
+            "Sam receives a sign-in code by text message that he did " +
+            "not request. Minutes later, a caller claiming to be from " +
+            "support asks Sam to read the code out to confirm his identity.",
+        question: "What should Sam do?",
+        options: [
+            "Read the code out, because the caller knows his name.",
+            "Refuse to share the code, end the call and change his password.",
+            "Share only the first half of the code."
+        ],
+        answer: 1,
+        explanation:
+            "An unrequested code suggests someone already has Sam's " +
+            "password and is trying to sign in. Genuine support teams " +
+            "never ask for these codes. Sam should never share it and " +
+            "should change his password because it may be exposed."
+    },
+
+    {
+        title: "Jo's monthly password change",
+        scenario:
+            "Jo's workplace forces a password change every month, so " +
+            "Jo changes \"Winter1\" to \"Winter2\", then to \"Winter3\".",
+        question: "Why does this habit provide little protection?",
+        options: [
+            "Each new password is easy to predict from the old one.",
+            "The passwords are changed too often to remember.",
+            "The number should be at the start instead of the end."
+        ],
+        answer: 0,
+        explanation:
+            "If an attacker learns one of Jo's passwords, the next one " +
+            "is easy to guess. This is why current NIST guidance no " +
+            "longer recommends forced routine changes, only changes " +
+            "when a password may have been exposed."
+    },
+
+    {
+        title: "Choosing a sign-in method",
+        scenario:
+            "A fictional banking app offers three ways to sign in: a " +
+            "code sent by text message, a code from an authenticator " +
+            "app, or a passkey.",
+        question: "Which option is most resistant to phishing?",
+        options: [
+            "A code sent by text message",
+            "A code from an authenticator app",
+            "A passkey"
+        ],
+        answer: 2,
+        explanation:
+            "A passkey only works on the real website or app it was " +
+            "created for, so a fake site cannot use it. Text and app " +
+            "codes are much safer than a password alone, but a person " +
+            "can still be tricked into typing them into a fake site."
+    }
+
+];
+
+const quizStep = document.getElementById("quizStep");
+const quizQuestion = document.getElementById("quizQuestion");
+const quizTitle = document.getElementById("quizTitle");
+const quizScenario = document.getElementById("quizScenario");
+const quizPrompt = document.getElementById("quizPrompt");
+const quizOptions = document.getElementById("quizOptions");
+const quizFeedback = document.getElementById("quizFeedback");
+const quizVerdict = document.getElementById("quizVerdict");
+const quizExplanation = document.getElementById("quizExplanation");
+const quizNextButton = document.getElementById("quizNextButton");
+const quizSummary = document.getElementById("quizSummary");
+const quizScore = document.getElementById("quizScore");
+const quizSummaryText = document.getElementById("quizSummaryText");
+const quizRestartButton = document.getElementById("quizRestartButton");
+
+let currentScenario = 0;
+let correctAnswers = 0;
+
+
+// Show the current scenario and build its answer buttons
+function showScenario() {
+
+    const item = quizScenarios[currentScenario];
+
+    quizStep.textContent =
+        `SCENARIO ${currentScenario + 1} OF ${quizScenarios.length}`;
+
+    quizTitle.textContent = item.title;
+    quizScenario.textContent = item.scenario;
+    quizPrompt.textContent = item.question;
+
+    // Remove the previous scenario's buttons
+    quizOptions.replaceChildren();
+
+    // Build buttons safely with textContent (never innerHTML)
+    item.options.forEach((optionText, optionIndex) => {
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "quiz-option";
+        button.textContent = optionText;
+
+        button.addEventListener("click", () => {
+            checkAnswer(optionIndex);
+        });
+
+        quizOptions.appendChild(button);
+
+    });
+
+    quizFeedback.hidden = true;
+    quizNextButton.hidden = true;
+
+}
+
+
+// Mark the chosen answer and explain the correct one
+function checkAnswer(chosenIndex) {
+
+    const item = quizScenarios[currentScenario];
+    const isCorrect = chosenIndex === item.answer;
+
+    if (isCorrect) {
+        correctAnswers++;
+    }
+
+    // Lock the answers and highlight the result
+    quizOptions.querySelectorAll("button").forEach((button, index) => {
+
+        button.disabled = true;
+
+        if (index === item.answer) {
+            button.classList.add("is-correct");
+        } else if (index === chosenIndex) {
+            button.classList.add("is-wrong");
+        }
+
+    });
+
+    quizVerdict.textContent = isCorrect ? "CORRECT" : "NOT QUITE";
+    quizExplanation.textContent = item.explanation;
+    quizFeedback.hidden = false;
+
+    const isLast = currentScenario === quizScenarios.length - 1;
+    quizNextButton.textContent =
+        isLast ? "See your result" : "Next scenario";
+
+    quizNextButton.hidden = false;
+    quizNextButton.focus();
+
+}
+
+
+// Show the final result
+function showSummary() {
+
+    const total = quizScenarios.length;
+
+    quizQuestion.hidden = true;
+    quizStep.textContent = "COMPLETE";
+
+    quizScore.textContent =
+        `You answered ${correctAnswers} of ${total} correctly`;
+
+    if (correctAnswers === total) {
+        quizSummaryText.textContent =
+            "Excellent. You spotted every risk.";
+    } else if (correctAnswers >= total - 2) {
+        quizSummaryText.textContent =
+            "Good work. Review the Learning Dashboard topics " +
+            "for the scenarios you missed.";
+    } else {
+        quizSummaryText.textContent =
+            "Keep learning. The Learning Dashboard above covers " +
+            "each of these topics. Then try again.";
+    }
+
+    quizSummary.hidden = false;
+    quizScore.focus();
+
+}
+
+
+quizNextButton.addEventListener("click", () => {
+
+    currentScenario++;
+
+    if (currentScenario < quizScenarios.length) {
+        showScenario();
+        quizTitle.focus();
+    } else {
+        showSummary();
+    }
+
+});
+
+
+quizRestartButton.addEventListener("click", () => {
+
+    currentScenario = 0;
+    correctAnswers = 0;
+
+    quizSummary.hidden = true;
+    quizQuestion.hidden = false;
+
+    showScenario();
+    quizTitle.focus();
+
+});
+
+
+// Start with the first scenario
+showScenario();
