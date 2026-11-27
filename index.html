@@ -24,6 +24,7 @@
             <a href="#learn">Learn</a>
             <a href="#lab">Security Lab</a>
             <a href="#predictability">Predictability</a>
+            <a href="#dashboard">Dashboard</a>
             <a href="#practices">Best Practices</a>
         </nav>
 
@@ -314,6 +315,267 @@
                 </p>
 
             </div>
+
+        </section>
+
+
+        <!-- M3 Security Learning Dashboard -->
+        <section class="section" id="dashboard">
+
+            <div class="section-heading">
+                <span class="eyebrow">M3 LEARNING DASHBOARD</span>
+
+                <h2>Build your security foundations</h2>
+
+                <p>
+                    Seven short topics on modern account security.
+                    Open each card to read the key idea, a common
+                    myth, and one practical action.
+                </p>
+            </div>
+
+            <div class="dashboard-progress">
+                <label for="dashboardProgress" class="input-label">
+                    Your progress
+                </label>
+
+                <progress id="dashboardProgress" value="0" max="7"></progress>
+
+                <p class="progress-text" aria-live="polite">
+                    <span id="topicsExplored">0</span> of
+                    <span id="topicsTotal">7</span> topics explored
+                </p>
+            </div>
+
+            <div class="topic-grid">
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">01</span>
+                        Memorability vs. unpredictability
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            Being easy for you to remember and being
+                            hard for others to guess are two different
+                            things. Password-guessing tools try popular
+                            phrases and familiar patterns first.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> If I can remember it easily, it is a good password.</p>
+                            <p><strong>Fact:</strong> A good password must be unpredictable. Memorability only helps once that is true.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                For the few passwords you must memorize,
+                                use several randomly chosen words instead
+                                of a famous quote or lyric.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">02</span>
+                        Password length
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            Every extra character multiplies the number
+                            of guesses an attacker needs. Current NIST
+                            guidance (SP 800-63B) recommends at least
+                            15 characters when a password is used on
+                            its own.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> A short password full of symbols beats a long one.</p>
+                            <p><strong>Fact:</strong> Length usually adds far more protection than a few extra symbols.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                Aim for at least 15 characters, and let a
+                                password manager generate them randomly.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">03</span>
+                        Password uniqueness
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            Data breaches happen. Attackers try leaked
+                            username and password pairs on many other
+                            sites, an attack called credential stuffing.
+                            A unique password keeps a breach limited
+                            to one account.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> Reusing one very strong password is fine.</p>
+                            <p><strong>Fact:</strong> Once a password leaks, its strength no longer matters. Reuse lets one breach unlock many accounts.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                Start with your email account. It can reset
+                                most of your other accounts, so it deserves
+                                a password used nowhere else.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">04</span>
+                        Password managers
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            A password manager generates long, random,
+                            unique passwords, stores them encrypted, and
+                            fills them in for you. You only need to
+                            remember one strong master password.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> Keeping all passwords in one place is riskier than memorizing them.</p>
+                            <p><strong>Fact:</strong> For most people, a reputable manager protected by a strong master password and MFA is far safer than reused or predictable passwords.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                Choose a reputable password manager and
+                                protect it with a long, unique master
+                                password and multi-factor authentication.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">05</span>
+                        Multi-factor authentication (MFA)
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            MFA adds a second proof, such as a phone app
+                            or security key, so a stolen password alone
+                            is not enough. Methods differ: security keys
+                            and passkeys are strongest, authenticator
+                            apps are good, and SMS codes are better than
+                            nothing but can be intercepted.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> With MFA turned on, my account cannot be broken into.</p>
+                            <p><strong>Fact:</strong> MFA greatly reduces risk, but codes can still be phished. Never share a code and reject sign-in prompts you did not start.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                Turn on MFA for your email, banking and
+                                password manager first. Prefer an
+                                authenticator app or security key over SMS.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">06</span>
+                        Passkeys
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            A passkey replaces a password with a
+                            cryptographic key stored on your device or in
+                            your password manager. It only works on the
+                            real website it was created for, so a fake
+                            phishing site cannot capture it.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> Passkeys send my fingerprint or face to the website.</p>
+                            <p><strong>Fact:</strong> Your fingerprint, face or PIN only unlocks the passkey on your device. The website never receives it.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                When an account offers passkeys, set one up,
+                                and make sure you still have a way to
+                                recover the account.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="topic-card">
+                    <summary>
+                        <span class="card-number">07</span>
+                        Common misconceptions
+                    </summary>
+
+                    <div class="topic-body">
+                        <h4>Key idea</h4>
+                        <p>
+                            Some widely repeated password advice is
+                            outdated. Attacks are also largely automated,
+                            so every account is a potential target, not
+                            only important people's accounts.
+                        </p>
+
+                        <div class="myth-fact">
+                            <p><strong>Myth:</strong> I should change all my passwords every few months.</p>
+                            <p><strong>Fact:</strong> NIST no longer recommends routine forced changes. Change a password when there is a sign it has been exposed.</p>
+                        </div>
+
+                        <div class="security-insight">
+                            <span class="insight-title">ONE ACTION</span>
+                            <p>
+                                When a service reports a breach, change
+                                that password straight away, along with
+                                any account where it was reused.
+                            </p>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+
+            <p class="privacy-note">
+                Your progress is not saved anywhere. It resets
+                when you refresh or close the page.
+            </p>
 
         </section>
 

@@ -28,11 +28,19 @@ Users choose one of four predefined scenarios (familiar phrases,
 predictable additions, common substitutions, password reuse). The
 page shows a fixed explanation and a safer-practice recommendation.
 
-### Data handling for both features
+### Security Learning Dashboard (Phase 4.3)
 
-- Input comes only from `<select>` dropdowns with fixed values.
-  There are no text fields, so users cannot type a password.
-- Lesson content is hardcoded in `js/app.js`.
+Seven fixed topic cards written directly in `index.html`, using the
+native `<details>` element to open and close. A small script counts
+how many cards were opened during the current visit. The count is
+held in memory only and is never saved.
+
+### Data handling for all features
+
+- Input comes only from `<select>` dropdowns with fixed values and
+  from opening or closing topic cards. There are no text fields, so
+  users cannot type a password.
+- Lesson content is hardcoded in `index.html` and `js/app.js`.
 - Results are written with `textContent`, never `innerHTML`, so
   content is always treated as plain text and cannot inject HTML or
   scripts.
