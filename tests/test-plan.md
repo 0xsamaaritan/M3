@@ -10,8 +10,9 @@ Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
   `index.html`. A temporary harness (kept outside the repository) selected each
   option, clicked each button and read the resulting DOM. Viewport widths tested:
   1280px, 768px and ~485px (the minimum headless Chrome window width).
-- **Manual checks** (visual layout, phone widths below 485px, real scrolling) must be
-  performed by a person in a browser — see "Manual test procedure" below.
+- **Manual checks** (visual layout, phone widths below 485px, real scrolling, refresh,
+  keyboard access): performed by the project owner in a browser on 2026-11-27, all passed.
+  See "Manual test procedure" below to repeat them.
 
 ---
 
@@ -20,14 +21,14 @@ Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
 | Test ID | Feature | Procedure | Expected result | Actual result | Status |
 |---|---|---|---|---|---|
 | M3-001 | Homepage loading | Open `http://localhost:8000/` | Page loads with styles applied, no console errors | Page loaded, stylesheet applied, zero JavaScript errors | Pass |
-| M3-002 | Home navigation | Click "Home" in the navigation bar | Page scrolls to the hero section | `#home` target exists; scroll not yet checked by hand | Pending |
-| M3-003 | Learn navigation | Click "Learn" | Page scrolls to "Why do we struggle to remember passwords?" | `#learn` target exists; scroll not yet checked by hand | Pending |
-| M3-004 | Security Lab navigation | Click "Security Lab" | Page scrolls to the Mnemonic Learning Engine | `#lab` target exists; scroll not yet checked by hand | Pending |
+| M3-002 | Home navigation | Click "Home" in the navigation bar | Page scrolls to the hero section | Scrolled to the hero section (manual check by project owner) | Pass |
+| M3-003 | Learn navigation | Click "Learn" | Page scrolls to "Why do we struggle to remember passwords?" | Scrolled to the Learn section (manual check by project owner) | Pass |
+| M3-004 | Security Lab navigation | Click "Security Lab" | Page scrolls to the Mnemonic Learning Engine | Scrolled to the Mnemonic Learning Engine (manual check by project owner) | Pass |
 | M3-006 | Button disable functionality | — | — | Not implemented by design: users may run a lesson repeatedly (see M3-015, M3-026) | Retired |
-| M3-007 | Best Practices navigation | Click "Best Practices" | Page scrolls to "Memorability is not enough" | `#practices` target exists; scroll not yet checked by hand | Pending |
+| M3-007 | Best Practices navigation | Click "Best Practices" | Page scrolls to "Memorability is not enough" | Scrolled to Best Practices (manual check by project owner) | Pass |
 | M3-008 | Responsive layout (tablet/desktop) | Load the page at 1280px, 768px and ~485px widths | No horizontal scrolling; no element wider than the viewport | No overflowing elements at any tested width | Pass |
-| M3-008a | Responsive layout (phone) | Browser DevTools device mode at 375px and 320px | Navigation wraps, cards stack in one column, no horizontal scrolling | Not yet tested (below headless minimum width) | Pending |
-| M3-009 | Browser refresh | Use both features, then refresh the page | Page reloads cleanly, results are hidden again, no errors | Not yet tested | Pending |
+| M3-008a | Responsive layout (phone) | Browser DevTools device mode at 375px and 320px | Navigation wraps, cards stack in one column, no horizontal scrolling | One-column layout, navigation wraps, no horizontal scrolling at 375px and 320px (manual check by project owner) | Pass |
+| M3-009 | Browser refresh | Use both features, then refresh the page | Page reloads cleanly, results are hidden again, no errors | Page reloaded cleanly, results hidden again, no console errors (manual check by project owner) | Pass |
 | M3-030 | HTML structure | Inspect `index.html` | Every section opened is closed; all sections are inside `<main>` | Stray `</section>` removed; DOM shows home, learn, lab, predictability, dashboard, practices inside `<main>` | Pass |
 
 ## 2. Mnemonic Learning Engine — Phase 4.1
@@ -53,7 +54,7 @@ Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
 | M3-022 | Predictable addition lesson | Select "Predictable number or symbol addition", click button | Title "Predictable additions may not help much" | Correct title, explanation and recommendation shown | Pass |
 | M3-023 | Substitution lesson | Select "Common character substitution", click button | Title "Common substitutions are familiar patterns" | Correct title, explanation and recommendation shown | Pass |
 | M3-024 | Password reuse lesson | Select "Reusing a password across accounts", click button | Title "Password reuse creates shared risk", recommends unique password per account | Correct title, explanation and recommendation shown | Pass |
-| M3-025 | Predictability navigation | Click "Predictability" in the navigation bar | Page scrolls to the Predictability section | `#predictability` target exists; scroll not yet checked by hand | Pending |
+| M3-025 | Predictability navigation | Click "Predictability" in the navigation bar | Page scrolls to the Predictability section | Scrolled to the Predictability section (manual check by project owner) | Pass |
 | M3-026 | Switching lessons | Show one lesson, then select another and click | Content is replaced by the new lesson | Content replaced on each click | Pass |
 | M3-027 | Features are independent | Use the mnemonic engine, then the predictability engine | Mnemonic result is unchanged by predictability lessons | Mnemonic stayed `SSBLP` and visible after all four lessons | Pass |
 | M3-028 | Privacy note | Read the card | Note states not to enter real passwords | Privacy note present | Pass |
@@ -68,9 +69,9 @@ Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
 | M3-043 | Progress counts first open | Open one card | Progress shows "1 of 7", bar advances | `1 of 7`, bar value `1` | Pass |
 | M3-044 | No double counting | Close and reopen the same card | Progress stays at "1 of 7" | Stayed `1 of 7` after closing and reopening | Pass |
 | M3-045 | All topics explored | Open all seven cards | Progress shows "7 of 7", bar full | `7 of 7`, bar value `7` | Pass |
-| M3-046 | Progress not saved | Open some cards, then refresh the page | Progress resets to "0 of 7"; nothing stored | No storage APIs in code (see M3-S02); refresh not yet checked by hand | Pending |
-| M3-047 | Dashboard navigation | Click "Dashboard" in the navigation bar | Page scrolls to "Build your security foundations" | `#dashboard` target exists; scroll not yet checked by hand | Pending |
-| M3-048 | Keyboard access | Press Tab to reach a card, press Enter or Space | Card opens and closes; a visible focus outline is shown | Not yet tested | Pending |
+| M3-046 | Progress not saved | Open some cards, then refresh the page | Progress resets to "0 of 7"; nothing stored | Progress reset to 0 of 7 after refresh (manual check by project owner) | Pass |
+| M3-047 | Dashboard navigation | Click "Dashboard" in the navigation bar | Page scrolls to "Build your security foundations" | Scrolled to "Build your security foundations" (manual check by project owner) | Pass |
+| M3-048 | Keyboard access | Press Tab to reach a card, press Enter or Space | Card opens and closes; a visible focus outline is shown | Cards open and close with Enter/Space; focus outline visible (manual check by project owner) | Pass |
 | M3-049 | Responsive layout | View at 1280px, 768px and ~485px | Two columns on desktop, one column at 850px and below, no horizontal scrolling | Two columns at 1280px, one column at 768px and ~485px, no overflow | Pass |
 | M3-050 | No regression | Use the Mnemonic and Predictability engines after the dashboard was added | Both still work as in sections 2 and 3 | `KODTNP` and "Password reuse creates shared risk" displayed, zero errors | Pass |
 
