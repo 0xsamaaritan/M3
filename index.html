@@ -137,57 +137,104 @@
         </section>
 
 
-        <!-- Security Lab -->
-        <section class="section lab-section" id="lab">
+        
+<!-- M3 Mnemonic Learning Engine -->
+<section class="section lab-section" id="lab">
 
-            <div class="section-heading">
-                <span class="eyebrow">INTERACTIVE LEARNING</span>
+    <div class="section-heading">
+        <span class="eyebrow">M3 LEARNING ENGINE</span>
 
-                <h2>Explore the mnemonic concept</h2>
+        <h2>Memory meets security</h2>
+
+        <p>
+            Explore how a familiar sentence can become a
+            mnemonic pattern — and why memorability alone
+            does not guarantee password security.
+        </p>
+    </div>
+
+    <div class="learning-card">
+
+        <div class="learning-header">
+            <span class="learning-step">INTERACTIVE LESSON 01</span>
+            <span class="learning-badge">Educational demo</span>
+        </div>
+
+        <h3>Choose a fictional phrase</h3>
+
+        <p class="learning-description">
+            Select one of the examples below to explore
+            the first-letter mnemonic technique.
+        </p>
+
+        <label for="phraseSelector" class="input-label">
+            Sample phrase
+        </label>
+
+        <select id="phraseSelector" class="phrase-selector">
+            <option value="Every New Beginning Creates Another Opportunity">
+                Every New Beginning Creates Another Opportunity
+            </option>
+
+            <option value="Knowledge Opens Doors To New Possibilities">
+                Knowledge Opens Doors To New Possibilities
+            </option>
+
+            <option value="Small Steps Build Lasting Progress">
+                Small Steps Build Lasting Progress
+            </option>
+        </select>
+
+        <button id="transformButton" class="primary-button">
+            Explore the mnemonic
+        </button>
+
+        <div id="learningResult" class="learning-result" hidden>
+
+            <div class="result-divider"></div>
+
+            <span class="result-label">
+                YOUR MNEMONIC PATTERN
+            </span>
+
+            <p id="mnemonicResult" class="mnemonic-result"></p>
+
+            <div class="lesson-explanation">
+                <h4>What just happened?</h4>
 
                 <p>
-                    See how a fictional sentence can be
-                    transformed into a memorable initial-letter
-                    pattern.
+                    The first letter of each word was extracted
+                    and combined into a shorter pattern.
+                    This can help explain how memory cues work.
                 </p>
             </div>
 
-            <div class="lab-card">
+            <div class="security-insight">
+                <span class="insight-title">
+                    SECURITY INSIGHT
+                </span>
 
-                <span class="lab-label">FICTIONAL EDUCATIONAL EXAMPLE</span>
-
-                <h3>Original phrase</h3>
-
-                <p class="sample-phrase">
-                    Every New Beginning Creates Another Opportunity
+                <p>
+                    Familiar quotations, song lyrics and
+                    predictable transformations may be
+                    guessable. Adding a few predictable
+                    numbers or symbols does not necessarily
+                    make a pattern secure.
                 </p>
-
-                <button id="transformButton" class="primary-button">
-                    Reveal the mnemonic
-                </button>
-
-                <div id="resultArea" class="result-area" hidden>
-
-                    <div class="result-divider"></div>
-
-                    <span class="result-label">
-                        FIRST-LETTER PATTERN
-                    </span>
-
-                    <p id="mnemonicResult" class="mnemonic-result"></p>
-
-                    <p class="security-warning">
-                        Educational example only. Initial-letter
-                        patterns from familiar or public phrases
-                        can be predictable. This is not a
-                        recommended password.
-                    </p>
-
-                </div>
-
             </div>
 
-        </section>
+        </div>
+
+        <p class="privacy-note">
+            This demonstration uses predefined examples.
+            Never enter or reuse your real account passwords
+            or private phrases in educational tools.
+        </p>
+
+    </div>
+
+</section>
+
 
 
         <!-- Best Practices -->
