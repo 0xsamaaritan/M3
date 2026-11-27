@@ -35,11 +35,22 @@ native `<details>` element to open and close. A small script counts
 how many cards were opened during the current visit. The count is
 held in memory only and is never saved.
 
+### Spot the Risk practice module (Phase 4.4)
+
+Five fixed fictional scenarios stored in `js/app.js`. Learners pick
+one of three answer buttons and see feedback. The answer buttons are
+created by JavaScript with `document.createElement` and `textContent`
+(never `innerHTML`). The score reflects the learner's answers, never
+the strength of any password, and is kept in memory only. Example
+passwords are deliberately weak and fictional; strong passwords are
+described, never shown, so they cannot be copied.
+
 ### Data handling for all features
 
-- Input comes only from `<select>` dropdowns with fixed values and
-  from opening or closing topic cards. There are no text fields, so
-  users cannot type a password.
+- Input comes only from `<select>` dropdowns with fixed values,
+  opening or closing topic cards, and clicking predefined answer
+  buttons. There are no text fields or forms, so users cannot type
+  a password.
 - Lesson content is hardcoded in `index.html` and `js/app.js`.
 - Results are written with `textContent`, never `innerHTML`, so
   content is always treated as plain text and cannot inject HTML or

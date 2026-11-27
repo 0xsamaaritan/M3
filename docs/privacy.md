@@ -1,7 +1,8 @@
 # M3 Privacy Policy
 
-Applies to M3 up to Phase 4.3 (Mnemonic Learning Engine, Password
-Predictability Awareness Engine and Security Learning Dashboard).
+Applies to M3 up to Phase 4.4 (Mnemonic Learning Engine, Password
+Predictability Awareness Engine, Security Learning Dashboard and the
+Spot the Risk practice module).
 
 ## Data Collection
 
@@ -17,6 +18,9 @@ can only choose from predefined fictional examples:
 - **Security Learning Dashboard** — seven topic cards to open and
   close. The "topics explored" counter is kept in memory only and
   resets when the page is refreshed or closed.
+- **Spot the Risk** — five fictional scenarios answered by clicking
+  predefined buttons. Answers and the score are kept in memory only
+  and reset when the page is refreshed or closed.
 
 ## Data Storage
 

@@ -25,6 +25,7 @@
             <a href="#lab">Security Lab</a>
             <a href="#predictability">Predictability</a>
             <a href="#dashboard">Dashboard</a>
+            <a href="#spot-the-risk">Practice</a>
             <a href="#practices">Best Practices</a>
         </nav>
 
@@ -576,6 +577,83 @@
                 Your progress is not saved anywhere. It resets
                 when you refresh or close the page.
             </p>
+
+        </section>
+
+
+        <!-- M3 Interactive Learning Module: Spot the Risk -->
+        <section class="section practice-section" id="spot-the-risk">
+
+            <div class="section-heading">
+                <span class="eyebrow">M3 PRACTICE</span>
+
+                <h2>Spot the risk</h2>
+
+                <p>
+                    Five short fictional scenarios. Choose the best
+                    answer and find out why it matters.
+                </p>
+            </div>
+
+            <div class="learning-card">
+
+                <div class="learning-header">
+                    <span id="quizStep" class="learning-step">SCENARIO 1 OF 5</span>
+                    <span class="learning-badge">Fictional scenarios</span>
+                </div>
+
+                <noscript>
+                    <p class="learning-description">
+                        This exercise needs JavaScript enabled.
+                    </p>
+                </noscript>
+
+                <!-- Filled in by js/app.js -->
+                <div id="quizQuestion">
+
+                    <h3 id="quizTitle" tabindex="-1"></h3>
+
+                    <p id="quizScenario" class="learning-description"></p>
+
+                    <p id="quizPrompt" class="quiz-prompt"></p>
+
+                    <div id="quizOptions" class="quiz-options"></div>
+
+                    <div aria-live="polite">
+                        <div id="quizFeedback" class="security-insight" hidden>
+                            <span id="quizVerdict" class="insight-title"></span>
+                            <p id="quizExplanation"></p>
+                        </div>
+                    </div>
+
+                    <button id="quizNextButton" class="primary-button quiz-next"
+                            type="button" hidden>
+                        Next scenario
+                    </button>
+
+                </div>
+
+                <div id="quizSummary" class="quiz-summary" hidden>
+
+                    <span class="result-label">YOUR RESULT</span>
+
+                    <h3 id="quizScore" tabindex="-1"></h3>
+
+                    <p id="quizSummaryText" class="learning-description"></p>
+
+                    <button id="quizRestartButton" class="primary-button"
+                            type="button">
+                        Try again
+                    </button>
+
+                </div>
+
+                <p class="privacy-note">
+                    All names and scenarios are fictional. Your answers
+                    are not saved and reset when you refresh the page.
+                </p>
+
+            </div>
 
         </section>
 

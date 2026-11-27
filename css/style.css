@@ -735,3 +735,86 @@ button {
         padding: 0 18px 18px;
     }
 }
+
+
+/* =================================
+   M3 PRACTICE: SPOT THE RISK
+================================= */
+
+.practice-section {
+    background: #0e1728;
+}
+
+.quiz-prompt {
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 10px;
+}
+
+.quiz-option {
+    text-align: left;
+    padding: 14px 16px;
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.quiz-option:hover:not(:disabled) {
+    border-color: var(--primary);
+}
+
+.quiz-option:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.quiz-option:disabled {
+    cursor: default;
+    color: var(--muted);
+}
+
+/* Symbols as well as colour, so the result is not shown by colour alone */
+.quiz-option.is-correct {
+    border-color: #3fb67b;
+    background: #13251d;
+    color: #a7e8c5;
+}
+
+.quiz-option.is-correct::before {
+    content: "\2713  ";
+}
+
+.quiz-option.is-wrong {
+    border-color: #e06c6c;
+    background: #2a1717;
+    color: #f2b8b8;
+}
+
+.quiz-option.is-wrong::before {
+    content: "\2717  ";
+}
+
+.quiz-next {
+    margin-top: 22px;
+}
+
+/* .primary-button sets display, which would override "hidden" */
+.quiz-next[hidden] {
+    display: none;
+}
+
+.quiz-summary h3 {
+    margin: 12px 0 8px;
+}
+
+#quizTitle:focus,
+#quizScore:focus {
+    outline: none;
+}

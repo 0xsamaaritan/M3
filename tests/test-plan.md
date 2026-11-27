@@ -1,6 +1,6 @@
 # M3 Functional Test Plan
 
-Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
+Covers M3 up to **Phase 4.4 — Interactive Learning Module: Spot the Risk**.
 
 ## How to read this document
 
@@ -29,7 +29,7 @@ Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
 | M3-008 | Responsive layout (tablet/desktop) | Load the page at 1280px, 768px and ~485px widths | No horizontal scrolling; no element wider than the viewport | No overflowing elements at any tested width | Pass |
 | M3-008a | Responsive layout (phone) | Browser DevTools device mode at 375px and 320px | Navigation wraps, cards stack in one column, no horizontal scrolling | One-column layout, navigation wraps, no horizontal scrolling at 375px and 320px (manual check by project owner) | Pass |
 | M3-009 | Browser refresh | Use both features, then refresh the page | Page reloads cleanly, results are hidden again, no errors | Page reloaded cleanly, results hidden again, no console errors (manual check by project owner) | Pass |
-| M3-030 | HTML structure | Inspect `index.html` | Every section opened is closed; all sections are inside `<main>` | Stray `</section>` removed; DOM shows home, learn, lab, predictability, dashboard, practices inside `<main>` | Pass |
+| M3-030 | HTML structure | Inspect `index.html` | Every section opened is closed; all sections are inside `<main>` | Stray `</section>` removed; DOM shows home, learn, lab, predictability, dashboard, spot-the-risk, practices inside `<main>` | Pass |
 
 ## 2. Mnemonic Learning Engine — Phase 4.1
 
@@ -74,6 +74,24 @@ Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
 | M3-048 | Keyboard access | Press Tab to reach a card, press Enter or Space | Card opens and closes; a visible focus outline is shown | Cards open and close with Enter/Space; focus outline visible (manual check by project owner) | Pass |
 | M3-049 | Responsive layout | View at 1280px, 768px and ~485px | Two columns on desktop, one column at 850px and below, no horizontal scrolling | Two columns at 1280px, one column at 768px and ~485px, no overflow | Pass |
 | M3-050 | No regression | Use the Mnemonic and Predictability engines after the dashboard was added | Both still work as in sections 2 and 3 | `KODTNP` and "Password reuse creates shared risk" displayed, zero errors | Pass |
+
+## 3c. Interactive Learning Module: Spot the Risk — Phase 4.4
+
+| Test ID | Feature | Procedure | Expected result | Actual result | Status |
+|---|---|---|---|---|---|
+| M3-060 | Initial state | Load the page, scroll to "Spot the risk" | "SCENARIO 1 OF 5", Alex's scenario, three answer buttons; no feedback, no Next button, no result | As expected | Pass |
+| M3-061 | Wrong answer | In scenario 1, choose "It does not contain enough uppercase letters." | Chosen answer marked ✗, correct answer marked ✓, "NOT QUITE" and explanation shown, Next button appears | As expected; keyboard focus moved to Next button | Pass |
+| M3-062 | Correct answer | Choose the correct answer in any scenario | "CORRECT" and explanation shown, correct answer marked ✓ | "CORRECT" shown for scenarios 2–5 | Pass |
+| M3-063 | No double counting | After answering, click another answer | Answers are locked; score does not change | All buttons disabled; final score stayed 4 of 5 | Pass |
+| M3-064 | Scenario order | Click Next after each answer | Scenarios 1–5 in order: Alex, Priya, Sam, Jo, sign-in method; feedback cleared each time | As expected; focus moved to each new title | Pass |
+| M3-065 | Final button label | Answer scenario 5 | Button reads "See your result" | As expected | Pass |
+| M3-066 | Result messages | Finish with 5, 4 and 0 correct | "Excellent…" for 5/5, "Good work…" for 3–4, "Keep learning…" for 0–2 | All three messages shown correctly | Pass |
+| M3-067 | Try again | Click "Try again" on the result screen | Returns to scenario 1 with score reset to 0 | As expected; a full second run scored 5 of 5 | Pass |
+| M3-068 | Practice navigation | Click "Practice" in the navigation bar | Page scrolls to "Spot the risk" | `#spot-the-risk` target exists; scroll not yet checked by hand | Pending |
+| M3-069 | Keyboard-only run | Use only Tab, Enter and Space to complete all five scenarios | Every answer and button reachable; focus outline visible | Not yet tested by hand | Pending |
+| M3-070 | Answers not saved | Answer two scenarios, then refresh | Quiz restarts at scenario 1 | No storage APIs in code (see M3-S02); refresh not yet checked by hand | Pending |
+| M3-071 | Responsive layout | View at 1280px and ~485px; also 375px and 320px by hand | Answer buttons full width, no horizontal scrolling | No overflow at 1280px and ~485px; phone widths not yet checked by hand | Pending |
+| M3-072 | No regression | Use the Mnemonic engine, Predictability engine and Dashboard | All still work | `SSBLP`, "Predictable additions may not help much", dashboard counter `1`; zero errors | Pass |
 
 ## 4. Security and privacy tests
 

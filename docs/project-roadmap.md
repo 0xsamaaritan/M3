@@ -6,15 +6,11 @@
 |---|---|---|
 | 1–3 | Project setup, README, initial educational website, security model, test plan | Done |
 | 4.1 | Mnemonic Learning Engine — first-letter mnemonics from fictional phrases | Done |
-| 4.2 | Password Predictability Awareness Engine — four predictable-pattern lessons | Done (manual checks pending, see `tests/test-plan.md`) |
-| 4.3 | Security Learning Dashboard — seven expandable topic cards (key idea, myth vs. fact, one action) with an unsaved progress counter | Done (manual checks pending, see `tests/test-plan.md`) |
+| 4.2 | Password Predictability Awareness Engine — four predictable-pattern lessons | Done |
+| 4.3 | Security Learning Dashboard — seven expandable topic cards (key idea, myth vs. fact, one action) with an unsaved progress counter | Done |
+| 4.4 | Interactive Learning Module "Spot the Risk" — five fictional scenarios with instant feedback and an unsaved score | Done (manual checks pending, see `tests/test-plan.md`) |
 
 ## Proposed (not yet approved)
-
-### Phase 4.4 — Interactive Security Learning Modules
-
-Small interactive exercises using fictional scenarios and predefined
-examples.
 
 ### Phase 4.5 — Password Security Best Practices
 
