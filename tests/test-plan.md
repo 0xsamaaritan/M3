@@ -1,6 +1,6 @@
 # M3 Functional Test Plan
 
-Covers M3 up to **Phase 4.2 — Password Predictability Awareness Engine**.
+Covers M3 up to **Phase 4.3 — Security Learning Dashboard**.
 
 ## How to read this document
 
@@ -28,7 +28,7 @@ Covers M3 up to **Phase 4.2 — Password Predictability Awareness Engine**.
 | M3-008 | Responsive layout (tablet/desktop) | Load the page at 1280px, 768px and ~485px widths | No horizontal scrolling; no element wider than the viewport | No overflowing elements at any tested width | Pass |
 | M3-008a | Responsive layout (phone) | Browser DevTools device mode at 375px and 320px | Navigation wraps, cards stack in one column, no horizontal scrolling | Not yet tested (below headless minimum width) | Pending |
 | M3-009 | Browser refresh | Use both features, then refresh the page | Page reloads cleanly, results are hidden again, no errors | Not yet tested | Pending |
-| M3-030 | HTML structure | Inspect `index.html` | Every section opened is closed; all sections are inside `<main>` | Stray `</section>` removed; DOM shows home, learn, lab, predictability, practices inside `<main>` | Pass |
+| M3-030 | HTML structure | Inspect `index.html` | Every section opened is closed; all sections are inside `<main>` | Stray `</section>` removed; DOM shows home, learn, lab, predictability, dashboard, practices inside `<main>` | Pass |
 
 ## 2. Mnemonic Learning Engine — Phase 4.1
 
@@ -57,6 +57,22 @@ Covers M3 up to **Phase 4.2 — Password Predictability Awareness Engine**.
 | M3-026 | Switching lessons | Show one lesson, then select another and click | Content is replaced by the new lesson | Content replaced on each click | Pass |
 | M3-027 | Features are independent | Use the mnemonic engine, then the predictability engine | Mnemonic result is unchanged by predictability lessons | Mnemonic stayed `SSBLP` and visible after all four lessons | Pass |
 | M3-028 | Privacy note | Read the card | Note states not to enter real passwords | Privacy note present | Pass |
+
+## 3b. Security Learning Dashboard — Phase 4.3
+
+| Test ID | Feature | Procedure | Expected result | Actual result | Status |
+|---|---|---|---|---|---|
+| M3-040 | Initial state | Load the page, do not interact | Seven topic cards, all closed; progress shows "0 of 7", bar empty | 7 cards, none open, counter `0`, bar value `0` of `7` | Pass |
+| M3-041 | Topic titles | Read the card headings | 01 Memorability vs. unpredictability, 02 Password length, 03 Password uniqueness, 04 Password managers, 05 MFA, 06 Passkeys, 07 Common misconceptions | All seven titles correct and in order | Pass |
+| M3-042 | Card content | Open each card | Each card shows a Key idea, a Myth/Fact box and a One Action box | All seven cards contain all three parts | Pass |
+| M3-043 | Progress counts first open | Open one card | Progress shows "1 of 7", bar advances | `1 of 7`, bar value `1` | Pass |
+| M3-044 | No double counting | Close and reopen the same card | Progress stays at "1 of 7" | Stayed `1 of 7` after closing and reopening | Pass |
+| M3-045 | All topics explored | Open all seven cards | Progress shows "7 of 7", bar full | `7 of 7`, bar value `7` | Pass |
+| M3-046 | Progress not saved | Open some cards, then refresh the page | Progress resets to "0 of 7"; nothing stored | No storage APIs in code (see M3-S02); refresh not yet checked by hand | Pending |
+| M3-047 | Dashboard navigation | Click "Dashboard" in the navigation bar | Page scrolls to "Build your security foundations" | `#dashboard` target exists; scroll not yet checked by hand | Pending |
+| M3-048 | Keyboard access | Press Tab to reach a card, press Enter or Space | Card opens and closes; a visible focus outline is shown | Not yet tested | Pending |
+| M3-049 | Responsive layout | View at 1280px, 768px and ~485px | Two columns on desktop, one column at 850px and below, no horizontal scrolling | Two columns at 1280px, one column at 768px and ~485px, no overflow | Pass |
+| M3-050 | No regression | Use the Mnemonic and Predictability engines after the dashboard was added | Both still work as in sections 2 and 3 | `KODTNP` and "Password reuse creates shared risk" displayed, zero errors | Pass |
 
 ## 4. Security and privacy tests
 

@@ -1,7 +1,7 @@
 # M3 Privacy Policy
 
-Applies to M3 up to Phase 4.2 (Mnemonic Learning Engine and
-Password Predictability Awareness Engine).
+Applies to M3 up to Phase 4.3 (Mnemonic Learning Engine, Password
+Predictability Awareness Engine and Security Learning Dashboard).
 
 ## Data Collection
 
@@ -14,6 +14,9 @@ can only choose from predefined fictional examples:
 - **Mnemonic Learning Engine** — three fictional sample phrases.
 - **Password Predictability Awareness Engine** — four predefined
   educational scenarios.
+- **Security Learning Dashboard** — seven topic cards to open and
+  close. The "topics explored" counter is kept in memory only and
+  resets when the page is refreshed or closed.
 
 ## Data Storage
 

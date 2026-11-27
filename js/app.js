@@ -168,3 +168,47 @@ analyzePatternButton.addEventListener("click", () => {
     patternResult.hidden = false;
 
 });
+
+
+/*
+ * M3 - Security Learning Dashboard
+ * Version: 0.4
+ *
+ * Counts topics opened during this visit only.
+ * Nothing is saved: no cookies or browser storage.
+ */
+
+const topicCards =
+    document.querySelectorAll(".topic-card");
+
+const dashboardProgress =
+    document.getElementById("dashboardProgress");
+
+const topicsExplored =
+    document.getElementById("topicsExplored");
+
+const topicsTotal =
+    document.getElementById("topicsTotal");
+
+// Remembers which cards were opened (in memory only)
+const exploredTopics = new Set();
+
+dashboardProgress.max = topicCards.length;
+topicsTotal.textContent = topicCards.length;
+
+topicCards.forEach((card, index) => {
+
+    card.addEventListener("toggle", () => {
+
+        if (!card.open) {
+            return;
+        }
+
+        exploredTopics.add(index);
+
+        dashboardProgress.value = exploredTopics.size;
+        topicsExplored.textContent = exploredTopics.size;
+
+    });
+
+});
